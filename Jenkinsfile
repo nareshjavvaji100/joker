@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        catchError()
+        catchError() {
+          bat 'build'
+        }
+        
       }
     }
     stage('build') {
